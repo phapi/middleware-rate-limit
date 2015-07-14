@@ -1,0 +1,38 @@
+{
+  "name": "phapi/middleware-rate-limit",
+  "description": "Middleware handling rate limiting",
+  "keywords": [
+    "middleware", "rate limit", "rate", "limit", "phapi"
+  ],
+  "version": "1.0.0",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "homepage": "http://phapi.github.io",
+  "authors": [
+    {
+      "name": "Peter Ahinko",
+      "email": "peter@ahinko.se",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "phapi/contract": "1.*",
+    "phapi/exception": "1.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*",
+    "mockery/mockery": "0.9.*",
+    "codeclimate/php-test-reporter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phapi\\Middleware\\RateLimit\\": "src/Phapi/Middleware/RateLimit/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phapi\\Tests\\Middleware\\RateLimit\\": "tests/Phapi/Middleware/RateLimit/"
+    }
+  }
+}
