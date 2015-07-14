@@ -20,7 +20,7 @@ class RateLimitTest extends TestCase
             '\\Phapi\\Tests\\Page' => new Bucket(800, 60, 10, false),
         );
 
-        $cache = \Mockery::mock('\Phapi\Cache\Memcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Memcache', '\Phapi\Contract\Cache\Cache']);
         $cache->shouldReceive('get')->with('rateLimitPhapiTestsPagephapi')->andReturn(null);
         $cache->shouldReceive('get')->with('rateLimitUpdatedPhapiTestsPagephapi')->andReturn(null);
 
@@ -52,7 +52,7 @@ class RateLimitTest extends TestCase
             '\\Phapi\\Tests\\Page' => new Bucket(800, 60, 10, false),
         );
 
-        $cache = \Mockery::mock('\Phapi\Cache\Nullcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Nullcache', '\Phapi\Contract\Cache\Cache']);
 
         $request = \Mockery::mock('Psr\Http\Message\ServerRequestInterface');
         $request->shouldReceive('getAttribute')->with('routeEndpoint', null)->andReturn('\\Phapi\\Tests\\Page');
@@ -71,7 +71,7 @@ class RateLimitTest extends TestCase
     {
         $rateLimitBuckets = array();
 
-        $cache = \Mockery::mock('\Phapi\Cache\Nullcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Nullcache', '\Phapi\Contract\Cache\Cache']);
 
         $request = \Mockery::mock('Psr\Http\Message\ServerRequestInterface');
         $request->shouldReceive('getAttribute')->with('routeEndpoint', null)->andReturn('\\Phapi\\Tests\\Page');
@@ -91,7 +91,7 @@ class RateLimitTest extends TestCase
             'default' => new Bucket(),
         );
 
-        $cache = \Mockery::mock('\Phapi\Cache\Memcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Memcache', '\Phapi\Contract\Cache\Cache']);
         $cache->shouldReceive('get')->with('rateLimitPhapiTestsPagephapi')->andReturn(null);
         $cache->shouldReceive('get')->with('rateLimitUpdatedPhapiTestsPagephapi')->andReturn(null);
 
@@ -127,7 +127,7 @@ class RateLimitTest extends TestCase
         $container->shouldReceive('offsetGet')->with('log')->andReturnSelf();
         $container->shouldReceive('warning')->with('Request (ID: U-u-i-d) made but without the Client-ID header. Please note that the request was executed as normal.');
 
-        $cache = \Mockery::mock('\Phapi\Cache\Memcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Memcache', '\Phapi\Contract\Cache\Cache']);
 
         $request = \Mockery::mock('Psr\Http\Message\ServerRequestInterface');
         $request->shouldReceive('hasHeader')->with('Client-ID')->andReturn(false);
@@ -150,7 +150,7 @@ class RateLimitTest extends TestCase
             '\\Phapi\\Tests\\Page' => new Bucket(800, 60, 10, true),
         );
 
-        $cache = \Mockery::mock('\Phapi\Cache\Memcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Memcache', '\Phapi\Contract\Cache\Cache']);
         $cache->shouldReceive('get')->with('rateLimitPhapiTestsPagephapi')->andReturn(0);
         $cache->shouldReceive('get')->with('rateLimitUpdatedPhapiTestsPagephapi')->andReturn(time());
 
@@ -176,7 +176,7 @@ class RateLimitTest extends TestCase
             '\\Phapi\\Tests\\Page' => new Bucket(800, 60, 10, false),
         );
 
-        $cache = \Mockery::mock('\Phapi\Cache\Memcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Memcache', '\Phapi\Contract\Cache\Cache']);
         $cache->shouldReceive('get')->with('rateLimitPhapiTestsPagephapi')->andReturn(0);
         $cache->shouldReceive('get')->with('rateLimitUpdatedPhapiTestsPagephapi')->andReturn(time());
 
@@ -202,7 +202,7 @@ class RateLimitTest extends TestCase
             '\\Phapi\\Tests\\Page' => new Bucket(800, 60, 10, false),
         );
 
-        $cache = \Mockery::mock('\Phapi\Cache\Memcache');
+        $cache = \Mockery::mock(['\Phapi\Cache\Memcache', '\Phapi\Contract\Cache\Cache']);
 
         $request = \Mockery::mock('Psr\Http\Message\ServerRequestInterface');
         $request->shouldReceive('getAttribute')->with('routeEndpoint', null)->andReturn(null);
