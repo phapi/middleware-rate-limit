@@ -4,8 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a64a319bf803c6886c475cc68c78dcd8",
+    "hash": "59bd306939b86737b9464f20bebc9cfb",
     "packages": [
+        {
+            "name": "phapi/cache-nullcache",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phapi/cache-nullcache.git",
+                "reference": "e13b2df27b638341a5f155b28c42d29697a8ec7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phapi/cache-nullcache/zipball/e13b2df27b638341a5f155b28c42d29697a8ec7a",
+                "reference": "e13b2df27b638341a5f155b28c42d29697a8ec7a",
+                "shasum": ""
+            },
+            "require": {
+                "phapi/contract": "1.*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phapi\\Cache\\": "src/Phapi/Cache/",
+                    "Phapi\\Di\\Validator\\": "src/Phapi/Di/Validator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Ahinko",
+                    "email": "peter@ahinko.se",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Phapi NullCache is a fallback cache package with a fake cache storage.",
+            "homepage": "http://phapi.github.io",
+            "keywords": [
+                "cache",
+                "nullcache",
+                "phapi"
+            ],
+            "time": "2015-07-02 08:31:59"
+        },
         {
             "name": "phapi/contract",
             "version": "1.0.0",
