@@ -33,10 +33,10 @@ A default bucket is required. This bucket will act as a fallback if the requeste
 ```php
 <?php
 // config rate limit middleware resources
-$rateLimitBuckets = array(
+$rateLimitBuckets = [
     'default' => new \Phapi\Middleware\RateLimit\Bucket(),
-    '\\Phapi\\Resource\\Page' => new \Phapi\Middleware\RateLimit\Bucket(600, 60, 10, false),
-);
+    '\\Phapi\\Endpoint\\Page' => new \Phapi\Middleware\RateLimit\Bucket(600, 60, 10, false),
+];
 // Add Middleware
 $pipeline->pipe(new \Phapi\Middleware\RateLimit(
   'Client-ID',
