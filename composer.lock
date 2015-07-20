@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "59bd306939b86737b9464f20bebc9cfb",
+    "hash": "b457e348190a62118d783f09d1b682ee",
     "packages": [
         {
             "name": "phapi/cache-nullcache",
@@ -1791,7 +1791,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.0"
+        "php": ">=5.6.0"
     },
     "platform-dev": []
 }
